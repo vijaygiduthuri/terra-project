@@ -25,7 +25,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0ca0742afa9ee482f"
+  ami             = "ami-0e410efc5bda647a5"
   instance_type   = "t2.medium"
   key_name        = "keypair"
   vpc_security_group_ids = [aws_security_group.three.id]
