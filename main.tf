@@ -29,7 +29,7 @@ resource "aws_instance" "two" {
   instance_type   = "t2.micro"
   key_name        = "keypair"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-northeast-3b"
+  availability_zone = "ap-northeast-3c"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
