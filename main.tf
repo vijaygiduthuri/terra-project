@@ -8,7 +8,7 @@ secret_key = "1A/8FTr/IT89Gk3a/ezLMzp7M8fujRJQ14gS9t81"
 resource "aws_instance" "one" {
   ami             = "ami-0ca0742afa9ee482f"
   instance_type   = "t2.micro"
-  key_name        = "keypairfordemo"
+  key_name        = "key"
   vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-northeast-3a"
   user_data       = <<EOF
@@ -27,7 +27,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0ca0742afa9ee482f"
   instance_type   = "t2.micro"
-  key_name        = "keypairfordemo"
+  key_name        = "key"
   vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-northeast-3b"
   user_data       = <<EOF
