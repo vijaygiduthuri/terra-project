@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "ap-south-1"
-access_key = "AKIN"
-secret_key = "1A/8ujRJQ14gS9t81"
+region = "ap-northeast-3"
+access_key = "AKIAZZ572XAQP7LIV2HO"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0d13e3e640877b0b9"
+  ami             = "ami-0a8088da728903221"
   instance_type   = "t2.micro"
-  key_name        = "keypairforterra"
+  key_name        = "terra-keypair"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-northeast-3a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0d13e3e640877b0b9"
-  instance_type   = "t2.medium"
-  key_name        = "keypairforterra"
+  ami             = "ami-0a8088da728903221"
+  instance_type   = "t2.micro"
+  key_name        = "terra-keypair"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1b"
+  availability_zone = "ap-northeast-3b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
